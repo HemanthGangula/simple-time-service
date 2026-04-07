@@ -81,6 +81,10 @@ kubectl port-forward svc/timeservice 8080:80
 curl http://localhost:8080/
 ```
 
+![Connecting to cluster and port forwarding](images/connecting-k8s-port-forwarding.png)
+
+![curl response](images/curl_command_results.png)
+
 ---
 
 ## Infrastructure — VPC + EKS on AWS
@@ -118,6 +122,8 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+![EKS Cluster on AWS](images/eks_cluster.png)
 
 After apply, configure kubectl using the output command:
 

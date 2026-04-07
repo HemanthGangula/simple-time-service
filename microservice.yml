@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timeservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: timeservice
+  template:
+    metadata:
+      labels:
+        app: timeservice
+    spec:
+      containers:
+        - name: timeservice
+          image: hemanthgangula/timeservice:1.0.0
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: timeservice
+spec:
+  type: ClusterIP
+  selector:
+    app: timeservice
+  ports:
+    - port: 80
+      targetPort: 8080

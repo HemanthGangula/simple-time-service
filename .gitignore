@@ -1,0 +1,12 @@
+# Go
+app/timeservice
+app/*.exe
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars.local
+.terraform.lock.hcl
+
+
